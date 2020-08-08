@@ -1,0 +1,29 @@
+{
+  "name": "ts-redis-postgres",
+  "version": "1.0.0",
+  "main": "dist/app.js",
+  "repository": "git@github.com:lucastercas/ts-redis-postgres.git",
+  "author": "lucastercas <lucasmtercas@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc",
+    "build:watch": "tsc -w",
+    "start": "node dist/app.js"
+  },
+  "dependencies": {
+    "ioredis": "^4.17.3",
+    "koa": "^2.13.0",
+    "koa-bodyparser": "^4.3.0",
+    "koa-json": "^2.0.2",
+    "koa-logger": "^3.2.1",
+    "koa-router": "^9.1.0",
+    "pg": "^8.3.0",
+    "sequelize": "^6.3.4"
+  },
+  "devDependencies": {
+    "@types/koa": "^2.11.3",
+    "@types/koa-router": "^7.4.1",
+    "@types/node": "^14.0.27",
+    "typescript": "^3.9.7"
+  }
+}

@@ -1,0 +1,38 @@
+version: "3.7"
+
+services:
+  wspack:
+    image: lucastercas/ts-pg-redis
+    build:
+      context: .
+    restart: unless-stopped
+    ports:
+      - 3000:3000
+    environment:
+      NODE_ENV: development
+      POSTGRES_HOST: postgres
+      POSTGRES_DATABASE: db_name
+      POSTGRES_DATABASE_USER: postgres
+      POSTGRES_PASSWORD: db_pass
+      POSTGRES_PORT: 5432
+      REDIS_NODES: "redis:6379"
+    volumes:
+      - ./dist:/opt/app/dist
+
+  postgres:
+    image: postgres:13-alpine
+    environment:
+      POSTGRES_DB: db_name
+      POSTGRES_PASSWORD: db_pass
+    ports:
+      - 5432:5423
+    volumes:
+      - pg-data:/var/lib/posgresql/data
+
+  redis:
+    image: redis:6.0.6
+    ports:
+      - 6379:6379
+
+volumes:
+  pg-data:

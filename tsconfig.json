@@ -1,0 +1,16 @@
+{
+  "compileOnSave": true,
+  "include": ["src"],
+  "compilerOptions": {
+    "experimentalDecorators": true,
+    "target": "ES6",
+    "module": "commonjs",
+    "sourceMap": true,
+    "outDir": "dist"
+  },
+  "watchOptions": {
+    "watchFile": "useFsEvents",
+    "watchDirectory": "useFsEvents",
+    "fallbackPolling": "dynamicPriority"
+  }
+}
